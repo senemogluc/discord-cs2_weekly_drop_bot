@@ -3,7 +3,8 @@ from discord.ext import commands
 import os
 from dotenv import load_dotenv
 import logging
-import datetime
+from services.cs2_service import cs2_weekly_reset_countdown
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -64,7 +65,7 @@ async def remove(ctx, msg: str):
     role = discord.utils.get(ctx.guild.roles, name=msg)
     if role:
         await ctx.author.remove_roles(role)
-        await ctx.send(f"{ctx.author.mention}, has had the {msg} removed.")
+        await ctx.send(f"{ctx.author.mention}, you have been removed from the {msg} role.")
     else:
         await ctx.send(f"{ctx.author.mention}, the {msg} role does not exist in this server.")
 
@@ -72,6 +73,9 @@ async def remove(ctx, msg: str):
 async def dm(ctx, *, msg):
     await ctx.author.send(f"Direct Message: {msg}")
 
-
+@bot.command()
+async def test(ctx):
+    time = cs2_weekly_reset_countdown()
+    await ctx.send(f"{ctx.author.mention}, {time}")
 
 bot.run(TOKEN, log_handler=handler, log_level=logging.DEBUG)
