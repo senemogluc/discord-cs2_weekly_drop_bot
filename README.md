@@ -1,0 +1,1 @@
+# discord-cs2_weekly_drop_bot
