@@ -18,11 +18,14 @@ project-root/
 ├── railway.toml
 ├── .env                 # Only used for local development
 ├── cogs/                # Modular command files
+│   └── cs2.py
 │   └── general.py
+│   └── roles.py
 ├── services/            # Reusable service logic
 │   └── cs2_service.py
-└── config/
-    └── environment_variables_config.py
+│   └── role_service.py
+└── config.py
+
 ```
 
 ---
@@ -42,7 +45,7 @@ project-root/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/discord-multi-utility-bot.git
+git clone https://github.com/senemogluc/discord-multi-utility-bot.git
 cd discord-multi-utility-bot
 ```
 
@@ -115,5 +118,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## 💡 Credits
 
-Made with ❤️ by [your-name]  
+Made with ❤️ by Cagin Senemoglu  
 Powered by [discord.py](https://discordpy.readthedocs.io/)
