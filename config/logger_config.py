@@ -1,5 +1,6 @@
 import logging
 
+
 logging.basicConfig(
     filename='discord.log',
     filemode='w',
