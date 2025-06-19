@@ -2,6 +2,7 @@ from discord.ext import commands
 from services.cs2_service import cs2_weekly_reset_countdown
 import logging
 
+
 logger = logging.getLogger(__name__)
 
 class CS2(commands.Cog):

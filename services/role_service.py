@@ -1,5 +1,6 @@
 from discord import Interaction, app_commands
 
+
 def filter_roles_by_name(roles, current: str) -> list[app_commands.Choice[str]]:
     filtered = [r.name for r in roles if current.lower() in r.name.lower()]
     return [app_commands.Choice(name=role, value=role) for role in filtered[:25]]
