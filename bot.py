@@ -3,7 +3,7 @@ from discord.ext import commands
 import os
 import logging
 import asyncio
-import config.environment_variables_config as environment_variables_config
+import config
 
 
 logger = logging.getLogger(__name__)
@@ -31,6 +31,6 @@ async def load_extensions():
 async def main():
     async with bot:
         await load_extensions()
-        await bot.start(environment_variables_config.TOKEN)
+        await bot.start(config.TOKEN)
 
 asyncio.run(main())
